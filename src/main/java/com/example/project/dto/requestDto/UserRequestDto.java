@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 public class UserRequestDto {
 
     @NotNull
-    @Size(min = 8, message = "Correo debe tener al memnoos 8 caracteres")
+    @Size(min = 8, message = "Correo debe tener al menos 8 caracteres")
     @Email
     private String email;
 

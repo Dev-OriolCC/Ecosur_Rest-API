@@ -47,10 +47,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         //config to permit all the requests
         // Added cors()
+        // Array for routes
+        String[] publicRoutes = {"/authenticate", "/api/specie/getSpecies", "/api/specie/addSpecie",
+        "/api/specie/updateSpecie/{id}", "/api/specie/deleteSpecie/{id}"};
+
         http.cors().and().csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/authenticate", "/createUser")
+                .antMatchers(publicRoutes)
                 .permitAll()
                 .anyRequest()
                 .authenticated()
