@@ -48,7 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         //config to permit all the requests
         // Added cors()
         // Array for routes
-        String[] publicRoutes = {"/authenticate"}; //, "/api/specie/getSpecies"};
+        String[] publicRoutes = {"/authenticate", "/api/specie/getSpecies"};
 
         http.cors().and().csrf()
                 .disable()
